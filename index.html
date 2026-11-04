@@ -34,9 +34,9 @@
     .help { margin: 13px 0 0; font-size: 13px; color: var(--muted); }
     #feedback { min-height: 22px; font-size: 14px; color: #995c12; margin-top: 13px; font-weight: 600; }
     /* A entrada permanece completamente livre: as folhas ficam do lado de fora do arco. */
-    .scene { display: flex; justify-content: center; align-items: center; position: relative; height: min(560px, 47vw); min-height: 460px; border-radius: 180px 180px 16px 16px; background: radial-gradient(circle at 50% 53%, #396866 0%, #1a4847 52%, #102c36 100%); box-shadow: 0 35px 90px #102e351c; isolation: isolate; overflow: hidden; }
+    .scene { display: flex; justify-content: center; align-items: flex-start; position: relative; height: min(570px, 49vw); min-height: 480px; border-radius: 180px 180px 16px 16px; background: radial-gradient(circle at 50% 34%, #4a7574 0, #1b4b4a 52%, #102c36 100%); box-shadow: 0 35px 90px #102e351c; isolation: isolate; overflow: hidden; padding-top: 12px; }
     .scene::before { content:""; position:absolute; inset:0; opacity:.2; background: repeating-radial-gradient(circle at 50% 50%, transparent 0 35px, #fff2 36px 37px); }
-    .open-door-art { width: 100%; height: 100%; display: block; position: relative; z-index: 1; filter: drop-shadow(0 14px 26px #0b262858); }
+    .open-door-art { width: 94%; max-width: 570px; display: block; position: relative; z-index: 1; transform: translateY(-34px); filter: drop-shadow(0 16px 28px #0b262858); }
     .scene-caption { position: absolute; z-index: 2; bottom: 24px; left: 0; width: 100%; color: #fff1d9; font-size: 11px; letter-spacing: .22em; text-align:center; text-transform:uppercase; font-weight: 700; text-shadow: 0 2px 8px #071e24; }
     .invite { background: #eaece4; border-block: 1px solid #213a3214; }
     .invite-inner { padding: 33px 0; display: flex; align-items: center; justify-content: space-between; gap: 22px; }
@@ -58,7 +58,8 @@
       .lead { font-size: 23px; }
       .description { font-size: 15px; margin-bottom: 24px; }
       .cta { width:100%; padding: 17px 12px; font-size: 15px; }
-      .scene { height: 420px; min-height: auto; width:100%; max-width:520px; margin:0 auto; }
+      .scene { height: 440px; min-height: auto; width:100%; max-width:520px; margin:0 auto; padding-top: 16px; }
+      .open-door-art { width: 95%; transform: translateY(-16px); }
       .invite-inner { display:block; padding-block:28px; }
       .pill-set { justify-content:flex-start; margin-top: 20px; }
       footer { flex-direction:column; gap:5px; padding-block:23px; }
@@ -89,7 +90,7 @@
       </a>
       <p class="help">Toque no botão para participar do grupo oficial.</p>
       <p class="lead">Quinta-feira Portas Abertas</p>
-      <p class="description">Participe deste encontro de fé, oração e esperança em Birigui. <strong>Entre no grupo de WhatsApp</strong> e receba todas as informações do culto.</p>
+      <p class="description">Participe deste encontro de fé, milagres e transformação em Birigui. <strong>Entre no grupo de WhatsApp</strong> e receba todas as informações do culto.</p>
       <div id="feedback" role="status" aria-live="polite"></div>
     </section>
     <div class="scene" role="img" aria-label="Duas portas amplamente abertas para os lados, revelando uma passagem livre e iluminada">
@@ -104,6 +105,7 @@
           <filter id="openGlow" x="-75%" y="-75%" width="250%" height="250%"><feGaussianBlur stdDeviation="23"/></filter>
           <clipPath id="doorwayClip"><path d="M169 478 V227 C169 114 351 114 351 227 V478 Z"/></clipPath>
         </defs>
+        <g transform="translate(0,-24)">
         <!-- A luz irradia de uma passagem totalmente livre. -->
         <ellipse cx="260" cy="335" rx="147" ry="245" fill="#ffd68d" opacity=".55" filter="url(#openGlow)"/>
         <ellipse cx="260" cy="495" rx="205" ry="34" fill="#e4b978" opacity=".18"/>
@@ -131,6 +133,7 @@
         <circle cx="439" cy="353" r="5.5" fill="#f4d79d" stroke="#fff1c9" stroke-width="1.5"/>
         <!-- Pequenos pontos de luz reforçam a sensação de boas-vindas. -->
         <g fill="#ffe6b1" opacity=".85"><circle cx="263" cy="138" r="3"/><circle cx="225" cy="184" r="2"/><circle cx="302" cy="234" r="2.5"/><circle cx="238" cy="359" r="2"/></g>
+        </g>
       </svg>
       <div class="scene-caption">As portas estão abertas</div>
     </div>
