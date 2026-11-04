@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#102e35" />
+  <meta name="description" content="Deus tem um milagre para você. Quinta-feira Portas Abertas em Birigui/SP: entre no grupo de WhatsApp e receba as informações do culto." />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Quinta-feira Portas Abertas | Birigui" />
+  <meta property="og:description" content="Deus tem um milagre para você. Participe do grupo de WhatsApp e saiba mais sobre Quinta-feira Portas Abertas em Birigui." />
+  <title>Quinta-feira Portas Abertas | Birigui/SP</title>
+  <style>
+    :root { --navy: #102e35; --green: #1d544b; --cream: #faf7f0; --gold: #bb9160; --muted: #5e6c6b; --whatsapp: #1d9f61; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; font-family: "Segoe UI", Arial, sans-serif; color: var(--navy); background: var(--cream); }
+    a { color: inherit; }
+    .page { min-height: 100vh; overflow: hidden; }
+    .wrap { width: min(1180px, calc(100% - 48px)); margin-inline: auto; }
+    header { height: 90px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(16,46,53,.1); }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; font-size: 13px; text-transform: uppercase; letter-spacing: .17em; font-weight: 700; }
+    .brand-mark { display: grid; place-items: center; width: 42px; height: 42px; border: 1px solid var(--gold); border-radius: 50%; color: var(--gold); }
+    .location { font-size: 12px; font-weight: 700; letter-spacing: .18em; color: var(--muted); }
+    main { display: grid; grid-template-columns: minmax(0, 1.07fr) minmax(0, .93fr); gap: 6%; align-items: center; min-height: 620px; padding-block: 68px 80px; }
+    .eyebrow { display: flex; align-items: center; gap: 14px; text-transform: uppercase; font-size: 12px; letter-spacing: .22em; color: #916c44; font-weight: 750; }
+    .eyebrow::before { content: ''; display: block; width: 40px; height: 1px; background: var(--gold); }
+    h1 { font-family: Georgia, "Times New Roman", serif; font-weight: 400; font-size: clamp(54px, 6.2vw, 96px); line-height: 1.02; letter-spacing: -.055em; margin: 26px 0 24px; }
+    h1 em { color: #aa8050; font-weight: 400; font-style: normal; }
+    .lead { font-family: Georgia, serif; font-size: clamp(21px, 2vw, 27px); line-height: 1.4; max-width: 540px; margin: 0 0 22px; }
+    .description { color: var(--muted); font-size: 16px; line-height: 1.8; max-width: 465px; margin: 0 0 30px; }
+    .cta { display: inline-flex; gap: 12px; align-items: center; justify-content: center; border: 0; border-radius: 10px; background: var(--whatsapp); color: white; font-size: 16px; font-weight: 750; text-decoration: none; padding: 19px 26px; cursor: pointer; min-height: 61px; box-shadow: 0 13px 22px #1d9f6120; transition: transform .2s, background .2s, box-shadow .2s; }
+    .cta:hover { background: #167e4e; transform: translateY(-2px); box-shadow: 0 17px 26px #1d9f612b; }
+    .cta:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
+    .help { margin: 13px 0 0; font-size: 13px; color: var(--muted); }
+    #feedback { min-height: 22px; font-size: 14px; color: #995c12; margin-top: 13px; font-weight: 600; }
+    .scene { display: flex; justify-content: center; align-items: center; position: relative; height: min(560px, 47vw); min-height: 460px; border-radius: 180px 180px 16px 16px; background: radial-gradient(circle at 50% 36%, #476c6a 0, #1a4847 52%, #102c36 100%); box-shadow: 0 35px 90px #102e351c; isolation: isolate; overflow: hidden; }
+    .scene:before { content:""; position: absolute; inset: 0; opacity: .35; background: repeating-radial-gradient(circle at 50% 55%, transparent 0 35px, #fff2 36px 37px); }
+    .halo { width: 350px; height: 350px; border-radius: 50%; position: absolute; top: 22%; background: radial-gradient(circle, #ffde9b4d, #eac08308 62%, transparent 70%); filter: blur(9px); }
+    .light { position: absolute; inset: 0; background: conic-gradient(from 180deg at 50% 62%, transparent 0deg, #f3c78316 22deg, transparent 40deg, #f3c78323 70deg, transparent 91deg, #f3c78316 121deg, transparent 146deg); }
+    .door-frame { position: relative; width: 55%; height: 71%; margin-top: 12%; border: 12px solid #bf9865; border-bottom: 0; border-radius: 49% 49% 0 0 / 28% 28% 0 0; background: linear-gradient(180deg, #efcb91 0%, #fff4d3 48%, #efc684 100%); box-shadow: 0 0 80px #ffd48f3b, inset 0 0 55px #fff6df; overflow: hidden; }
+    .door-frame:after { content:""; position: absolute; left: 50%; top:0; bottom:0; width:2px; transform: translateX(-50%); background: #bd9b73b0; }
+    .door { position: absolute; bottom:0; height: 87%; width: 48%; background: linear-gradient(120deg, #173c3d, #275650); border: 4px solid #b79764; box-shadow: inset 5px 0 20px #081c226e; }
+    .door.left { left:0; transform-origin: left bottom; transform: perspective(800px) rotateY(-62deg); }
+    .door.right { right:0; transform-origin: right bottom; transform: perspective(800px) rotateY(62deg); }
+    .door:after { content:""; position:absolute; width:7px; height:7px; border-radius:50%; background: #edcf9e; top:52%; right:12px; }
+    .door.right:after { right:auto; left:12px; }
+    .floor { position:absolute; left:-10%; right:-10%; bottom:-10%; height:28%; border-radius:50% 50% 0 0; background: radial-gradient(ellipse at 50% 0%, #d5ae7299 0%, #0f3035 59%); }
+    .scene-caption { position: absolute; bottom: 24px; left: 0; width: 100%; color: #f7e9d0; font-size: 11px; letter-spacing: .22em; text-align:center; text-transform:uppercase; font-weight: 700; }
+    .invite { background: #eaece4; border-block: 1px solid #213a3214; }
+    .invite-inner { padding: 33px 0; display: flex; align-items: center; justify-content: space-between; gap: 22px; }
+    .invite-inner h2 { font-family: Georgia, serif; font-size: 29px; margin: 0 0 5px; font-weight: 400; }
+    .invite-inner p { color: var(--muted); margin:0; font-size: 14px; line-height: 1.6; }
+    .pill-set { display: flex; flex-wrap: wrap; justify-content:flex-end; gap: 9px; }
+    .pill { border: 1px solid #9baaa3; padding: 10px 16px; border-radius: 50px; font-size: 13px; font-weight: 650; color: var(--green); }
+    footer { display:flex; justify-content:space-between; gap:15px; padding: 28px 0; font-size: 12px; color:var(--muted); }
+    @media (max-width: 800px) {
+      main .cta { position: sticky; bottom: 14px; z-index: 5; box-shadow: 0 6px 25px #123a2980; }
+      .cta-bottom { width:100%; }
+      .wrap { width: min(100% - 36px, 580px); }
+      header { height: 72px; }
+      .brand { font-size: 10px; }
+      .brand-mark { width: 35px; height: 35px; }
+      .location { font-size: 10px; }
+      main { grid-template-columns: 1fr; gap: 35px; padding: 46px 0 52px; }
+      h1 { font-size: clamp(55px, 13vw, 77px); margin: 22px 0; }
+      .lead { font-size: 23px; }
+      .description { font-size: 15px; margin-bottom: 24px; }
+      .cta { width:100%; padding: 17px 12px; font-size: 15px; }
+      .scene { height: 420px; min-height: auto; width:100%; max-width:520px; margin:0 auto; }
+      .door-frame { height: 70%; }
+      .invite-inner { display:block; padding-block:28px; }
+      .pill-set { justify-content:flex-start; margin-top: 20px; }
+      footer { flex-direction:column; gap:5px; padding-block:23px; }
+    }
+    @media (prefers-reduced-motion: reduce) { *, *:before, *:after { transition:none !important; scroll-behavior:auto !important; } }
+  </style>
+</head>
+<body>
+<div class="page">
+  <header class="wrap">
+    <a class="brand" href="#" aria-label="Quinta-feira Portas Abertas, início">
+      <span class="brand-mark" aria-hidden="true">✦</span>
+      <span>Portas Abertas</span>
+    </a>
+    <span class="location">BIRIGUI · SP</span>
+  </header>
+  <main class="wrap">
+    <section aria-labelledby="titulo">
+      <div class="eyebrow">Quinta-feira Portas Abertas · Birigui/SP</div>
+      <h1 id="titulo">Deus tem um <em>milagre para você.</em></h1>
+      <p class="lead">Quinta-feira Portas Abertas</p>
+      <p class="description">Participe deste encontro de fé, oração e esperança em Birigui. <strong>Entre no grupo de WhatsApp</strong> e receba todas as informações do culto.</p>
+      <a id="whatsapp-link" class="cta" href="#" rel="noopener noreferrer" target="_blank">
+        <svg width="24" height="24" fill="none" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20.1 11.6a8.1 8.1 0 0 1-11.7 7.3L4 20l1.2-4.2a8.1 8.1 0 1 1 14.9-4.2Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/>
+          <path d="M8.7 8.2c-.3-.5-.6-.4-.8-.4s-.5 0-.7.3c-.2.3-.9 1-.9 2.2 0 1.3.9 2.4 1 2.6 1.3 1.8 3 3.1 4.9 3.6 1.6.4 2.3.3 3.1.2.6-.2 1.6-1 1.8-1.8.2-.5.2-1-.1-1.1l-2.1-1c-.3-.1-.5-.1-.7.2l-.9 1.1c-.2.2-.4.2-.7 0a8.4 8.4 0 0 1-2.5-1.5 9.7 9.7 0 0 1-1.7-2.2c-.2-.4 0-.5.2-.7l.6-.7a.6.6 0 0 0 .1-.7l-.6-1.5Z" fill="currentColor" transform="translate(1.1 0) scale(.85)"/>
+        </svg>
+        Entrar no grupo do WhatsApp
+        <span aria-hidden="true">↗</span>
+      </a>
+      <p class="help">Toque no botão para participar do grupo oficial.</p>
+      <div id="feedback" role="status" aria-live="polite"></div>
+    </section>
+    <div class="scene" role="img" aria-label="Ilustração de duas portas abertas com luz acolhedora ao fundo">
+      <div class="halo"></div><div class="light"></div>
+      <div class="door-frame"><div class="door left"></div><div class="door right"></div></div>
+      <div class="floor"></div>
+      <div class="scene-caption">As portas estão abertas</div>
+    </div>
+  </main>
+  <section class="invite">
+    <div class="invite-inner wrap">
+      <div><h2>Você é nosso convidado.</h2><p>Entre no grupo e receba as informações sobre a reunião.</p><a class="cta cta-bottom" href="https://chat.whatsapp.com/HSWVX3NZvmAIUO7ItGCipp" target="_blank" rel="noopener noreferrer" style="margin-top:18px">Entrar no grupo do WhatsApp ↗</a></div>
+      <div class="pill-set"><span class="pill">Comunhão</span><span class="pill">Palavra</span><span class="pill">Oração</span></div>
+    </div>
+  </section>
+  <footer class="wrap"><span>Quinta-feira Portas Abertas</span><span>Birigui, São Paulo</span></footer>
+</div>
+<script>
+  // Link oficial do grupo informado pelo organizador. Use o endereço base de convite sem parâmetros de rastreamento.
+  const GRUPO_WHATSAPP_URL = "https://chat.whatsapp.com/HSWVX3NZvmAIUO7ItGCipp";
+
+  const botao = document.getElementById("whatsapp-link");
+  const feedback = document.getElementById("feedback");
+  const grupoValido = /^https:\/\/chat\.whatsapp\.com\/[A-Za-z0-9_-]+\/?$/.test(GRUPO_WHATSAPP_URL.trim());
+
+  if (grupoValido) {
+    botao.href = GRUPO_WHATSAPP_URL.trim();
+  } else {
+    botao.removeAttribute("href");
+    botao.removeAttribute("target");
+    botao.addEventListener("click", (evento) => {
+      evento.preventDefault();
+      feedback.textContent = "O link de convite será disponibilizado em breve.";
+    });
+  }
+</script>
+</body>
+</html>
