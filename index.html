@@ -33,19 +33,11 @@
     .cta:focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
     .help { margin: 13px 0 0; font-size: 13px; color: var(--muted); }
     #feedback { min-height: 22px; font-size: 14px; color: #995c12; margin-top: 13px; font-weight: 600; }
-    .scene { display: flex; justify-content: center; align-items: center; position: relative; height: min(560px, 47vw); min-height: 460px; border-radius: 180px 180px 16px 16px; background: radial-gradient(circle at 50% 36%, #476c6a 0, #1a4847 52%, #102c36 100%); box-shadow: 0 35px 90px #102e351c; isolation: isolate; overflow: hidden; }
-    .scene:before { content:""; position: absolute; inset: 0; opacity: .35; background: repeating-radial-gradient(circle at 50% 55%, transparent 0 35px, #fff2 36px 37px); }
-    .halo { width: 350px; height: 350px; border-radius: 50%; position: absolute; top: 22%; background: radial-gradient(circle, #ffde9b4d, #eac08308 62%, transparent 70%); filter: blur(9px); }
-    .light { position: absolute; inset: 0; background: conic-gradient(from 180deg at 50% 62%, transparent 0deg, #f3c78316 22deg, transparent 40deg, #f3c78323 70deg, transparent 91deg, #f3c78316 121deg, transparent 146deg); }
-    .door-frame { position: relative; width: 55%; height: 71%; margin-top: 12%; border: 12px solid #bf9865; border-bottom: 0; border-radius: 49% 49% 0 0 / 28% 28% 0 0; background: linear-gradient(180deg, #efcb91 0%, #fff4d3 48%, #efc684 100%); box-shadow: 0 0 80px #ffd48f3b, inset 0 0 55px #fff6df; overflow: hidden; }
-    .door-frame:after { content:""; position: absolute; left: 50%; top:0; bottom:0; width:2px; transform: translateX(-50%); background: #bd9b73b0; }
-    .door { position: absolute; bottom:0; height: 87%; width: 48%; background: linear-gradient(120deg, #173c3d, #275650); border: 4px solid #b79764; box-shadow: inset 5px 0 20px #081c226e; }
-    .door.left { left:0; transform-origin: left bottom; transform: perspective(800px) rotateY(-62deg); }
-    .door.right { right:0; transform-origin: right bottom; transform: perspective(800px) rotateY(62deg); }
-    .door:after { content:""; position:absolute; width:7px; height:7px; border-radius:50%; background: #edcf9e; top:52%; right:12px; }
-    .door.right:after { right:auto; left:12px; }
-    .floor { position:absolute; left:-10%; right:-10%; bottom:-10%; height:28%; border-radius:50% 50% 0 0; background: radial-gradient(ellipse at 50% 0%, #d5ae7299 0%, #0f3035 59%); }
-    .scene-caption { position: absolute; bottom: 24px; left: 0; width: 100%; color: #f7e9d0; font-size: 11px; letter-spacing: .22em; text-align:center; text-transform:uppercase; font-weight: 700; }
+    /* A entrada permanece completamente livre: as folhas ficam do lado de fora do arco. */
+    .scene { display: flex; justify-content: center; align-items: center; position: relative; height: min(560px, 47vw); min-height: 460px; border-radius: 180px 180px 16px 16px; background: radial-gradient(circle at 50% 53%, #396866 0%, #1a4847 52%, #102c36 100%); box-shadow: 0 35px 90px #102e351c; isolation: isolate; overflow: hidden; }
+    .scene::before { content:""; position:absolute; inset:0; opacity:.2; background: repeating-radial-gradient(circle at 50% 50%, transparent 0 35px, #fff2 36px 37px); }
+    .open-door-art { width: 100%; height: 100%; display: block; position: relative; z-index: 1; filter: drop-shadow(0 14px 26px #0b262858); }
+    .scene-caption { position: absolute; z-index: 2; bottom: 24px; left: 0; width: 100%; color: #fff1d9; font-size: 11px; letter-spacing: .22em; text-align:center; text-transform:uppercase; font-weight: 700; text-shadow: 0 2px 8px #071e24; }
     .invite { background: #eaece4; border-block: 1px solid #213a3214; }
     .invite-inner { padding: 33px 0; display: flex; align-items: center; justify-content: space-between; gap: 22px; }
     .invite-inner h2 { font-family: Georgia, serif; font-size: 29px; margin: 0 0 5px; font-weight: 400; }
@@ -67,7 +59,6 @@
       .description { font-size: 15px; margin-bottom: 24px; }
       .cta { width:100%; padding: 17px 12px; font-size: 15px; }
       .scene { height: 420px; min-height: auto; width:100%; max-width:520px; margin:0 auto; }
-      .door-frame { height: 70%; }
       .invite-inner { display:block; padding-block:28px; }
       .pill-set { justify-content:flex-start; margin-top: 20px; }
       footer { flex-direction:column; gap:5px; padding-block:23px; }
@@ -101,10 +92,46 @@
       <p class="help">Toque no botão para participar do grupo oficial.</p>
       <div id="feedback" role="status" aria-live="polite"></div>
     </section>
-    <div class="scene" role="img" aria-label="Ilustração de duas portas abertas com luz acolhedora ao fundo">
-      <div class="halo"></div><div class="light"></div>
-      <div class="door-frame"><div class="door left"></div><div class="door right"></div></div>
-      <div class="floor"></div>
+    <div class="scene" role="img" aria-label="Duas portas amplamente abertas para os lados, revelando uma passagem livre e iluminada">
+      <svg class="open-door-art" viewBox="0 0 520 560" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+        <defs>
+          <linearGradient id="openFrameGold" x1="0" x2="1" y1="0" y2="0"><stop stop-color="#987342"/><stop offset=".26" stop-color="#f2d399"/><stop offset=".66" stop-color="#e4b873"/><stop offset="1" stop-color="#9b7545"/></linearGradient>
+          <linearGradient id="openLight" x1="0" y1="0" x2=".1" y2="1"><stop stop-color="#fff7e2"/><stop offset=".48" stop-color="#ffe5a2"/><stop offset="1" stop-color="#e9af63"/></linearGradient>
+          <radialGradient id="openSun" cx=".5" cy=".42" r=".6"><stop stop-color="#fffdf1"/><stop offset=".5" stop-color="#ffedbb" stop-opacity=".95"/><stop offset="1" stop-color="#f6c477" stop-opacity=".05"/></radialGradient>
+          <linearGradient id="doorLeftWood" x1="0" y1="0" x2="1" y2=".2"><stop stop-color="#2d655d"/><stop offset=".52" stop-color="#214a48"/><stop offset="1" stop-color="#102e35"/></linearGradient>
+          <linearGradient id="doorRightWood" x1="1" y1="0" x2="0" y2=".2"><stop stop-color="#2d655d"/><stop offset=".52" stop-color="#214a48"/><stop offset="1" stop-color="#102e35"/></linearGradient>
+          <linearGradient id="openPath" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#fff4d9" stop-opacity=".78"/><stop offset="1" stop-color="#f8cf90" stop-opacity="0"/></linearGradient>
+          <filter id="openGlow" x="-75%" y="-75%" width="250%" height="250%"><feGaussianBlur stdDeviation="23"/></filter>
+          <clipPath id="doorwayClip"><path d="M169 478 V227 C169 114 351 114 351 227 V478 Z"/></clipPath>
+        </defs>
+        <!-- A luz irradia de uma passagem totalmente livre. -->
+        <ellipse cx="260" cy="335" rx="147" ry="245" fill="#ffd68d" opacity=".55" filter="url(#openGlow)"/>
+        <ellipse cx="260" cy="495" rx="205" ry="34" fill="#e4b978" opacity=".18"/>
+        <path d="M180 476 H340 L475 543 H45 Z" fill="url(#openPath)" opacity=".78"/>
+        <path d="M145 478 V227 C145 80 375 80 375 227 V478 Z" fill="url(#openFrameGold)" stroke="#eecf98" stroke-width="2"/>
+        <path d="M169 478 V227 C169 114 351 114 351 227 V478 Z" fill="url(#openLight)" stroke="#ffedc2" stroke-width="2"/>
+        <g clip-path="url(#doorwayClip)">
+          <ellipse cx="260" cy="272" rx="148" ry="202" fill="url(#openSun)"/>
+          <path d="M260 237 L90 478 H430 Z" fill="#fff9e8" opacity=".35"/>
+          <path d="M260 298 L157 478 H363 Z" fill="#fffdf1" opacity=".45"/>
+          <path d="M260 326 L219 478 H301 Z" fill="#fffdf6" opacity=".55"/>
+          <path d="M178 444 H342 M178 465 H342" stroke="#fff4d5" opacity=".45" stroke-width="2"/>
+        </g>
+        <!-- Folha esquerda girada para fora, sem cobrir o centro. -->
+        <path d="M145 194 L68 223 L51 472 L145 478 Z" fill="url(#doorLeftWood)" stroke="#d1ae76" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M133 215 L83 237 L69 455 L133 464 Z" fill="none" stroke="#b69464" stroke-width="2.5" opacity=".86"/>
+        <path d="M119 226 L117 455 M92 247 L82 445" stroke="#f0d3a0" stroke-opacity=".22" stroke-width="2"/>
+        <path d="M145 194 V478" stroke="#f4d59c" stroke-width="5" opacity=".77"/>
+        <circle cx="81" cy="353" r="5.5" fill="#f4d79d" stroke="#fff1c9" stroke-width="1.5"/>
+        <!-- Folha direita girada para fora, simétrica à esquerda. -->
+        <path d="M375 194 L452 223 L469 472 L375 478 Z" fill="url(#doorRightWood)" stroke="#d1ae76" stroke-width="4" stroke-linejoin="round"/>
+        <path d="M387 215 L437 237 L451 455 L387 464 Z" fill="none" stroke="#b69464" stroke-width="2.5" opacity=".86"/>
+        <path d="M401 226 L403 455 M428 247 L438 445" stroke="#f0d3a0" stroke-opacity=".22" stroke-width="2"/>
+        <path d="M375 194 V478" stroke="#f4d59c" stroke-width="5" opacity=".77"/>
+        <circle cx="439" cy="353" r="5.5" fill="#f4d79d" stroke="#fff1c9" stroke-width="1.5"/>
+        <!-- Pequenos pontos de luz reforçam a sensação de boas-vindas. -->
+        <g fill="#ffe6b1" opacity=".85"><circle cx="263" cy="138" r="3"/><circle cx="225" cy="184" r="2"/><circle cx="302" cy="234" r="2.5"/><circle cx="238" cy="359" r="2"/></g>
+      </svg>
       <div class="scene-caption">As portas estão abertas</div>
     </div>
   </main>
